@@ -16,7 +16,7 @@ router.post('/', async (req, res, next) => {
         const user = await UserSchema.findOne({ $or: [{ 'email': req.body.loginid }, { 'phone': req.body.loginid }] }).exec()
         const valid = await user.validatePassword(req.body.password)
         if (valid) {
-            const token=jwt.sign({user:user._id},process.env.JWT_SECRET_KEY)
+            const token=jwt.sign({id:user._id},process.env.JWT_SECRET_KEY)
             return new successResponse(res, { accesstoken: token }, "logged in")
         } else {
             return new errorResponse(res, 'invalid credentials', server_code._500)
