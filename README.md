@@ -3,6 +3,12 @@
 -install nodemon--- npm install nodemon
 -npm start 
 
+Incase not recieving mail(bc google can block smtp call from not secured server) use this credential
+
+id:pallavsaikia57@gmail.com
+password:123456
+
+
 
 signup
 http://127.0.0.1:3000/api/signup
