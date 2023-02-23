@@ -1,20 +1,17 @@
 const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+const sendGridTransport=require('nodemailer-sendgrid-transport')
+const transporter = nodemailer.createTransport(sendGridTransport({
     auth: {
-        user: 'testmailassign@gmail.com',
-        pass: 'owfobynaxisjrbbx',
+        //add api key to env file
+        api_key: process.env.SEND_GRID_API,
     }
-});
+}));
 
 
 function mailOptions(to, subject, text) {
     return {
-        from: 'testmailassign@gmail.com',
+        //fill from email in send grid sender  profile 
+        from: '',
         to: to,
         subject: subject,
         text: text

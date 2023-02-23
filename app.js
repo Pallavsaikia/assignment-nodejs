@@ -17,7 +17,7 @@ const apiRoutes = require('./api/api.route');
 
 
 
-const MongoURI = "mongodb+srv://pallavsaikia:XPUxgf35mdAU9OcK@assignment.xh9ndz7.mongodb.net/?retryWrites=true&w=majority"
+const MongoURI = process.env.MongoURI
 
 //mongoose connect
 mongoose.connect(MongoURI);

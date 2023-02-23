@@ -3,11 +3,8 @@
 -install nodemon--- npm install nodemon
 -npm start 
 
-Incase not recieving mail(bc google can block smtp call from not secured server) use this credential
-
-id:pallavsaikia57@gmail.com
-password:123456
-
+-add send grid api key for send grid to env file
+-add mongo db uri to (atlas) in env file
 
 
 signup

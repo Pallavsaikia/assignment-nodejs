@@ -11,9 +11,8 @@ module.exports = function (req, res, next) {
         } else {
             try {
 
-                const user = await UserSchema.findOne({ _id: token_dict.id, isActive: true }).lean()
                 if (user) {
-                    res.locals.user = user._id;
+                    res.locals.user = token_dict.id;
                     next();
                 } else {
                     return new errorresponse(res, "Invalid Token", status_code._401)
